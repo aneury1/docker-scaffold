@@ -51,3 +51,11 @@ services:
 #            - REACT_APP_NAME=test
 #        #env_file: 
 #        #    - ./reactjsapp/.env
+    postgres-db:
+        image: postgres
+        volumes: 
+            - ./postgres/db:/var/lib/postgresql/data
+        environment: 
+             POSTGRES_PASSWORD: "password"
+        ports: 
+            - "5432:5432"
